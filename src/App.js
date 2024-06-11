@@ -16,6 +16,7 @@ function App() {
           <Route path="/register" element={<SignUp />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/create-task" element={<TaskForm />} />
+          <Route path="/edit-task/:id" element={<TaskForm />} />
         </Routes>
       </BrowserRouter>
       {/* </AuthProvider> */}

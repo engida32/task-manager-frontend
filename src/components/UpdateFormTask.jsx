@@ -1,19 +1,19 @@
+import React, { useState, useEffect } from "react";
 import {
   Button,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
-  Stack,
   TextField,
+  Stack,
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 
-const TaskForm = () => {
+const UpdateTaskForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("Medium");
@@ -54,7 +54,7 @@ const TaskForm = () => {
       ? `${process.env.REACT_APP_API_BASE_URL}/tasks/${id}`
       : `${process.env.REACT_APP_API_BASE_URL}/tasks`;
 
-    const method = id ? "patch" : "post";
+    const method = id ? "put" : "post";
 
     await axios[method](
       url,
@@ -152,4 +152,4 @@ const TaskForm = () => {
   );
 };
 
-export default TaskForm;
+export default UpdateTaskForm;
