@@ -36,9 +36,7 @@ const Login = () => {
   const [password, setPassword] = React.useState("");
   const [showPassword, setShowPassword] = React.useState(false);
   const navigate = useNavigate();
-  // implement the login with axios
   const handleLogin = () => {
-    console.log("env", process.env.REACT_APP_API_BASE_URL);
     axios
       .post(`${process.env.REACT_APP_API_BASE_URL}/auth/login`, {
         email,
