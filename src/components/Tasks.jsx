@@ -1,3 +1,5 @@
+import CreateIcon from "@mui/icons-material/Create";
+import LogoutIcon from "@mui/icons-material/Logout";
 import {
   AppBar,
   CircularProgress,
@@ -11,7 +13,6 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import TaskCard from "../components/TaskCard";
-
 const Tasks = () => {
   const [tasks, setTasks] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
@@ -87,14 +88,52 @@ const Tasks = () => {
     >
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div">
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              color: "white",
+              marginRight: 2,
+              fontWeight: "bold",
+            }}
+          >
             Tasks
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} />
-          <Button color="inherit" onClick={() => navigate("/create-task")}>
+          <Button
+            color="inherit"
+            onClick={() => navigate("/create-task")}
+            startIcon={<CreateIcon />}
+            sx={{
+              marginRight: 2,
+              color: "white",
+              backgroundColor: "green",
+              borderRadius: 20,
+              padding: "5px 10px",
+              textTransform: "capitalize",
+
+              "&:hover": {
+                backgroundColor: "green",
+              },
+            }}
+          >
             Create Task
           </Button>
-          <Typography variant="h6" component="div">
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              marginRight: 2,
+              color: "white",
+              backgroundColor: "green",
+              borderRadius: 20,
+              padding: "5px 10px",
+              textTransform: "capitalize",
+              "&:hover": {
+                backgroundColor: "green",
+              },
+            }}
+          >
             {JSON.parse(localStorage.getItem("authData"))?.user?.name}
           </Typography>
           <Button
@@ -103,8 +142,9 @@ const Tasks = () => {
               localStorage.removeItem("authData");
               navigate("/");
             }}
+            sx={{ marginLeft: 2 }}
           >
-            Logout
+            <LogoutIcon />
           </Button>
         </Toolbar>
       </AppBar>
