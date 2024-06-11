@@ -5,7 +5,7 @@ REACT_APP_API_BASE_URL=
  -->
 1. Clone the repository
 ```bash
-git clone
+git clone git@github.com:engida32/task-manager-frontend.git
 ```
 2. Install the dependencies
 ```bash 
