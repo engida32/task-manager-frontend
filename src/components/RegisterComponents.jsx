@@ -104,7 +104,7 @@ const SignUp = () => {
               lineHeight: "20px",
             }}
           >
-            Enter your email and password to sign in
+            Sign up to get started
           </Typography>
         </Stack>
       </Stack>
@@ -133,7 +133,7 @@ const SignUp = () => {
               lineHeight: "normal",
             }}
           >
-            Name
+            User Name
           </Typography>
           <TextField
             variant="outlined"
@@ -246,31 +246,34 @@ const SignUp = () => {
         >
           Sign in
         </Button>
-        <Box
+        <Button
           sx={{
             display: "flex",
-            justifyContent: "space-between",
             width: "100%",
             mt: "16px",
+            backgroundColor: "#FC2D7C",
+            color: "#FFF",
+            padding: "12px",
+            borderRadius: "12px",
+            alignItems: "center",
+            textTransform: "none",
+            "&:hover": {
+              backgroundColor: "#FC2D7C",
+            },
           }}
         >
           <Typography
             sx={{
               ...textStyles,
+              color: "#FFF",
+              fontSize: "18px",
+              textAlign: "center",
             }}
+            onClick={() => navigate("/")}
           >
-            Sign up
+            Already have an account? Login
           </Typography>
-          <Typography
-            sx={{
-              ...textStyles,
-              cursor: "pointer",
-            }}
-            // onClick={() => router.push("/forget-password")}
-          >
-            Forgot Password
-          </Typography>
-        </Box>
+        </Button>
       </Stack>
     </Box>
   );

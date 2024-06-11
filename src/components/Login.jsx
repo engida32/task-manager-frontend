@@ -219,32 +219,34 @@ const Login = () => {
         >
           Sign in
         </Button>
-        <Box
+        <Button
           sx={{
             display: "flex",
-            justifyContent: "space-between",
             width: "100%",
             mt: "16px",
+            backgroundColor: "#FC2D7C",
+            color: "#FFF",
+            padding: "12px",
+            borderRadius: "12px",
+            alignItems: "center",
+            textTransform: "none",
+            "&:hover": {
+              backgroundColor: "#FC2D7C",
+            },
           }}
         >
           <Typography
             sx={{
               ...textStyles,
+              color: "#FFF",
+              fontSize: "18px",
+              textAlign: "center",
             }}
             onClick={() => navigate("/register")}
           >
-            Sign up
+            Create an account
           </Typography>
-          <Typography
-            sx={{
-              ...textStyles,
-              cursor: "pointer",
-            }}
-            // onClick={() => router.push("/forget-password")}
-          >
-            Forgot Password
-          </Typography>
-        </Box>
+        </Button>
       </Stack>
     </Box>
   );
