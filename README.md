@@ -11,13 +11,10 @@ git clone
 ```bash 
 yarn install
 ```
-3. Create a .env file in the root of the project and add the following content
-```bash
-REACT_APP_API_BASE_URL=
-```
-4. Start the project
+ 
+3. Start the project
 ```bash
 yarn start
 ```
-5. Open the browser and go to http://localhost:3000
+4. Open the browser and go to http://localhost:3000
 ```
