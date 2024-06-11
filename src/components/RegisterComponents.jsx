@@ -261,6 +261,7 @@ const SignUp = () => {
               backgroundColor: "#FC2D7C",
             },
           }}
+          onClick={() => navigate("/")}
         >
           <Typography
             sx={{

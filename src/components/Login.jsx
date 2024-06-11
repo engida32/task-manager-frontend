@@ -234,6 +234,7 @@ const Login = () => {
               backgroundColor: "#FC2D7C",
             },
           }}
+          onClick={() => navigate("/register")}
         >
           <Typography
             sx={{
