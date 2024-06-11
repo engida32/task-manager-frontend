@@ -233,6 +233,7 @@ const Login = () => {
             sx={{
               ...textStyles,
             }}
+            onClick={() => navigate("/register")}
           >
             Sign up
           </Typography>

@@ -1,11 +1,14 @@
 import { AppBar, Stack, Toolbar, Typography } from "@mui/material";
+import Button from "@mui/material/Button";
 import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Tasks = () => {
-  //get tasks from the server  with axios
+  //get tasks from the server  with
   const [tasks, setTasks] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
+  const navigate = useNavigate();
   const GetTasks = async () => {
     try {
       setLoading(true);
@@ -45,8 +48,17 @@ const Tasks = () => {
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} />
           <Typography variant="h6" component="div">
-            {JSON.parse(localStorage.getItem("authData")).user?.name}
+            {JSON.parse(localStorage.getItem("authData"))?.user?.name}
           </Typography>
+          <Button
+            color="inherit"
+            onClick={() => {
+              localStorage.removeItem("authData");
+              navigate("/");
+            }}
+          >
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
       {loading && <div>loading...</div>}
